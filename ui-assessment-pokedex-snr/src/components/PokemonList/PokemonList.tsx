@@ -11,8 +11,15 @@ export const PokemonList = () => {
       {loading && <div>Loading...</div>}
       {pokemons.map((pkmn) => (
         <div key={pkmn.id}>
-        <div >{pkmn.name}</div>
+        <div >{pkmn.number}. {pkmn.name}</div>
         <div ><img src={pkmn.image}></img>  </div>
+        <div>
+          Types: 
+            {pkmn.types.map((pType) =>
+            <div>{pType}</div>
+          )}
+
+        </div>
         </div>
       ))}
     </div>
