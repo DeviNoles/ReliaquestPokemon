@@ -51,8 +51,13 @@ const useStyles = createUseStyles(
       '& img':{
         height: '150px',
         width: '150px'
+      },
+      '&:hover':{
+        boxShadow: '0 0 11px rgba(33,33,33,.2)',
+        backgroundColor: 'blue'
       }
     },
+ 
     cardContent:{
       display:'inline'
     }
