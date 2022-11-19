@@ -14,7 +14,7 @@ import { Search } from '../Search/Search'
   
   return (
     <div className={classes.root}>
-      <Search/>
+      <Search Pokemons={pokemons}/>
 
 
 
