@@ -1,18 +1,27 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
 import { useGetPokemons } from '../../hooks/useGetPokemons';
-
-export const PokemonList = () => {
+import { Search } from '../Search/Search'
+ export const PokemonList = () => {
   const classes = useStyles();
   const { pokemons, loading } = useGetPokemons();
+  if(loading)
+  {
+    return <div className={classes.root}>Loading...</div>
+  }
+  else{
 
+  
   return (
     <div className={classes.root}>
-      {loading && <div>Loading...</div>}
+      <Search/>
+
+
 
 {/* pokemon list */}
       {pokemons.map((pkmn) => (
         <div className={classes.card}>
+          <div className={classes.line1}></div>
      <div ><img src={pkmn.image}></img>  </div>
         <div className={classes.cardContent}>
         <div key={pkmn.id}>
@@ -27,6 +36,8 @@ export const PokemonList = () => {
         </div>
         </div>
         </div>
+        <div className={classes.line2}></div>
+        <div className={classes.line3}></div>
         </div>
       ))}
 
@@ -34,7 +45,7 @@ export const PokemonList = () => {
     </div>
   );
 };
-
+ }
 const useStyles = createUseStyles(
   {
     root: {
@@ -45,20 +56,56 @@ const useStyles = createUseStyles(
    
     },
     card:{
+      overflow: 'hidden',
+      position: 'relative',
       display: 'flex',
-      backgroundColor: '#8997ad',
+      backgroundColor: '#0d7bdb',
       marginBottom:'5px',
       '& img':{
         height: '150px',
-        width: '150px'
+        width: '150px',
+        zIndex: '12 !important'
       },
       '&:hover':{
-        boxShadow: '0 0 11px rgba(33,33,33,.2)',
-        backgroundColor: 'blue'
-      }
+       borderColor: 'orange'
+      },
+      borderColor:'#525252',
+      borderRadius: '17px',
+      borderWidth:'5px',
+      borderStyle:'solid'
     },
- 
+    
+    line1: {
+        width: '100%',
+        height: '6%',
+        position: 'absolute',
+        top: '0',
+        left: '0',
+        zIndex: '10',
+        backgroundColor: '#0cadf2'
+    },
+    line2: {
+      width: '100%',
+      height: '15%',
+      position: 'absolute',
+      bottom: '4px',
+      left: '0',
+      zIndex: '10',
+      backgroundColor: '#0cadf2'
+  },
+
+  line3: {
+    width: '100%',
+    height: '6%',
+    position: 'absolute',
+    bottom: '35px',
+    left: '0',
+    zIndex: '10',
+    backgroundColor: '#0cadf2'
+},
     cardContent:{
+      borderRadius: '17px',
+
       display:'inline'
     }
   },
