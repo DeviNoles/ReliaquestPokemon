@@ -22,7 +22,7 @@ import { Search } from '../Search/Search'
       {pokemons.map((pkmn) => (
         <div className={classes.card}>
           <div className={classes.line1}></div>
-     <div ><img src={pkmn.image}></img>  </div>
+     <div className={classes.pImage} ><img src={pkmn.image}></img>  </div>
         <div className={classes.cardContent}>
         <div key={pkmn.id}>
         <div >{pkmn.number}. {pkmn.name}</div>
@@ -62,9 +62,8 @@ const useStyles = createUseStyles(
       backgroundColor: '#0d7bdb',
       marginBottom:'5px',
       '& img':{
-        height: '150px',
+        height: '100%',
         width: '150px',
-        zIndex: '12 !important'
       },
       '&:hover':{
        borderColor: 'orange'
@@ -81,7 +80,7 @@ const useStyles = createUseStyles(
         position: 'absolute',
         top: '0',
         left: '0',
-        zIndex: '10',
+        zIndex: '5',
         backgroundColor: '#0cadf2'
     },
     line2: {
@@ -90,8 +89,12 @@ const useStyles = createUseStyles(
       position: 'absolute',
       bottom: '4px',
       left: '0',
-      zIndex: '10',
+      zIndex: '5',
       backgroundColor: '#0cadf2'
+  },
+
+  pImage:{
+    zIndex: '9'
   },
 
   line3: {
@@ -100,7 +103,7 @@ const useStyles = createUseStyles(
     position: 'absolute',
     bottom: '35px',
     left: '0',
-    zIndex: '10',
+    zIndex: '5',
     backgroundColor: '#0cadf2'
 },
     cardContent:{
