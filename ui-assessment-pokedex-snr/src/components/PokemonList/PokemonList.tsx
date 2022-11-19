@@ -9,10 +9,15 @@ export const PokemonList = () => {
   return (
     <div className={classes.root}>
       {loading && <div>Loading...</div>}
+
+{/* pokemon list */}
       {pokemons.map((pkmn) => (
+        <div className={classes.card}>
+     <div ><img src={pkmn.image}></img>  </div>
+        <div className={classes.cardContent}>
         <div key={pkmn.id}>
         <div >{pkmn.number}. {pkmn.name}</div>
-        <div ><img src={pkmn.image}></img>  </div>
+   
         <div>
           Types: 
             {pkmn.types.map((pType) =>
@@ -21,7 +26,11 @@ export const PokemonList = () => {
 
         </div>
         </div>
+        </div>
+        </div>
       ))}
+
+{/* pokemon list end*/}
     </div>
   );
 };
@@ -33,7 +42,20 @@ const useStyles = createUseStyles(
       textAlign: 'center',
       padding: '32px',
       boxSizing: 'border-box',
+   
     },
+    card:{
+      display: 'flex',
+      backgroundColor: '#8997ad',
+      marginBottom:'5px',
+      '& img':{
+        height: '150px',
+        width: '150px'
+      }
+    },
+    cardContent:{
+      display:'inline'
+    }
   },
   { name: 'PokemonList' }
 );
