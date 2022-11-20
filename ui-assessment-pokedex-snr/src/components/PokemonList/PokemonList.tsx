@@ -1,10 +1,12 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { createUseStyles } from 'react-jss';
 import { useGetPokemons } from '../../hooks/useGetPokemons';
 import { Search } from '../Search/Search'
  export const PokemonList = () => {
   const classes = useStyles();
   const { pokemons, loading } = useGetPokemons();
+  const [currentSearch, setCurrentSearch] = useState('');
+
   if(loading)
   {
     return <div className={classes.root}>Loading...</div>
@@ -14,105 +16,108 @@ import { Search } from '../Search/Search'
   
   return (
     <div className={classes.root}>
-      <Search Pokemons={pokemons}/>
+      {/* <Search Pokemons={pokemons}/> */}
+      <input type="text" placeholder='Search..' className={classes.inputBox} onChange={(e)=>{setCurrentSearch(e.target.value)} }/>
+{pokemons.filter((val)=>{
+  if(currentSearch=="") return val
+  else if(val.name.toLowerCase().includes(currentSearch.toLowerCase())) return val
+
+}).map((pkmn) => (
+  <div className={classes.card}>
+    <div className={classes.line1}></div>
+<div className={classes.pImage} ><img src={pkmn.image}></img>  </div>
+  <div className={classes.cardContent}>
+  <div key={pkmn.id}>
+  <div >{pkmn.number}. {pkmn.name}</div>
+
+  <div className={classes.typeLayout}>
+      {pkmn.types.map((pType) =>
+      {
+      if(pType=="Normal")
+      {
+        
+        return <div className={classes.typeLabel_Normal}>{pType}</div>
+
+      }
+      else if(pType=="Fire"){
+        return <div className={classes.typeLabel_Fire}>{pType}</div>
+
+      }
+      else if(pType=="Water"){
+        return <div className={classes.typeLabel_Water}>{pType}</div>
+
+      }
+      else if(pType=="Electric"){
+        return <div className={classes.typeLabel_Electric}>{pType}</div>
+
+      }
+      else if(pType=="Grass"){
+        return <div className={classes.typeLabel_Grass}>{pType}</div>
+
+      }
+      else if(pType=="Ice"){
+        return <div className={classes.typeLabel_Ice}>{pType}</div>
+
+      }
+      else if(pType=="Fighting"){
+        return <div className={classes.typeLabel_Fighting}>{pType}</div>
+
+      }
+      else if(pType=="Poison"){
+        return <div className={classes.typeLabel_Poison}>{pType}</div>
+
+      }
+      else if(pType=="Ground"){
+        return <div className={classes.typeLabel_Ground}>{pType}</div>
+
+      }
+      else if(pType=="Flying"){
+        return <div className={classes.typeLabel_Flying}>{pType}</div>
+
+      }
+      else if(pType=="Psychic "){
+        return <div className={classes.typeLabel_Psychic}>{pType}</div>
+
+      }
+      else if(pType=="Bug"){
+        return <div className={classes.typeLabel_Bug}>{pType}</div>
+
+      }
+      else if(pType=="Rock"){
+        return <div className={classes.typeLabel_Rock}>{pType}</div>
+
+      }
+      else if(pType=="Ghost"){
+        return <div className={classes.typeLabel_Ghost}>{pType}</div>
+
+      }
+      else if(pType=="Dragon"){
+        return <div className={classes.typeLabel_Dragon}>{pType}</div>
+
+      }
+      else if(pType=="Dark"){
+        return <div className={classes.typeLabel_Dark}>{pType}</div>
+
+      }
+      else if(pType=="Steel"){
+        return <div className={classes.typeLabel_Steel}>{pType}</div>
+
+      }
+      else if(pType=="Fairy"){
+        return <div className={classes.typeLabel_Fairy}>{pType}</div>
+
+      }
+})}
+
+  </div>
+  </div>
+  </div>
+  <div className={classes.line2}></div>
+  <div className={classes.line3}></div>
+  </div>
+))}
 
 
-
-{/* pokemon list */}
-      {pokemons.map((pkmn) => (
-        <div className={classes.card}>
-          <div className={classes.line1}></div>
-     <div className={classes.pImage} ><img src={pkmn.image}></img>  </div>
-        <div className={classes.cardContent}>
-        <div key={pkmn.id}>
-        <div >{pkmn.number}. {pkmn.name}</div>
-   
-        <div className={classes.typeLayout}>
-            {pkmn.types.map((pType) =>
-            {
-            if(pType=="Normal")
-            {
-              
-              return <div className={classes.typeLabel_Normal}>{pType}</div>
-
-            }
-            else if(pType=="Fire"){
-              return <div className={classes.typeLabel_Fire}>{pType}</div>
-
-            }
-            else if(pType=="Water"){
-              return <div className={classes.typeLabel_Water}>{pType}</div>
-
-            }
-            else if(pType=="Electric"){
-              return <div className={classes.typeLabel_Electric}>{pType}</div>
-
-            }
-            else if(pType=="Grass"){
-              return <div className={classes.typeLabel_Grass}>{pType}</div>
-
-            }
-            else if(pType=="Ice"){
-              return <div className={classes.typeLabel_Ice}>{pType}</div>
-
-            }
-            else if(pType=="Fighting"){
-              return <div className={classes.typeLabel_Fighting}>{pType}</div>
-
-            }
-            else if(pType=="Poison"){
-              return <div className={classes.typeLabel_Poison}>{pType}</div>
-
-            }
-            else if(pType=="Ground"){
-              return <div className={classes.typeLabel_Ground}>{pType}</div>
-
-            }
-            else if(pType=="Flying"){
-              return <div className={classes.typeLabel_Flying}>{pType}</div>
-
-            }
-            else if(pType=="Psychic "){
-              return <div className={classes.typeLabel_Psychic}>{pType}</div>
-
-            }
-            else if(pType=="Bug"){
-              return <div className={classes.typeLabel_Bug}>{pType}</div>
-
-            }
-            else if(pType=="Rock"){
-              return <div className={classes.typeLabel_Rock}>{pType}</div>
-
-            }
-            else if(pType=="Ghost"){
-              return <div className={classes.typeLabel_Ghost}>{pType}</div>
-
-            }
-            else if(pType=="Dragon"){
-              return <div className={classes.typeLabel_Dragon}>{pType}</div>
-
-            }
-            else if(pType=="Dark"){
-              return <div className={classes.typeLabel_Dark}>{pType}</div>
-
-            }
-            else if(pType=="Steel"){
-              return <div className={classes.typeLabel_Steel}>{pType}</div>
-
-            }
-            else if(pType=="Fairy"){
-              return <div className={classes.typeLabel_Fairy}>{pType}</div>
-
-            }
-  })}
-
-        </div>
-        </div>
-        </div>
-        <div className={classes.line2}></div>
-        <div className={classes.line3}></div>
-        </div>
-      ))}
 
 {/* pokemon list end*/}
     </div>
@@ -128,6 +133,9 @@ const useStyles = createUseStyles(
       boxSizing: 'border-box',
    
     },
+    inputBox:{
+      color: 'black'
+  },
     card:{
       alignItems: 'center',
       overflow: 'hidden',

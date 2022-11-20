@@ -16,7 +16,7 @@ export const Search = (props: any) => {
 }
   return (
     <div className={classes.root}>
-        <input type="text" placeholder='Search..' className={classes.inputBox} onChange={handleChange} value={currentSearch}></input>
+        <input type="text" placeholder='Search..' className={classes.inputBox} onChange={handleChange}></input>
     </div>
   );
 };
