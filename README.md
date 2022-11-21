@@ -6,3 +6,4 @@ Additional Todo
 - [X] hover pokemon ui
 - [ ] Fix broken list ui
 - [ ] fix image zlevel
+- [ ] Comment and organize code
