@@ -27,19 +27,20 @@ import { Search } from '../Search/Search'
 
 }).map((pkmn) => (
   // <a href='https://www.google.com'>
-  <div className={classes.card}>
+  <Link
+  key={pkmn.id}
+  to={{
+    pathname: `/img/${pkmn.id}`,
+    // This is the trick! This link sets
+    // the `background` in location state.
+    //  state: { background: location }
+  }}
+>
+<div className={classes.card}>
   <div className={classes.line1}></div>
-        <Link
-          key={pkmn.id}
-          to={{
-            pathname: `/img/${pkmn.id}`,
-            // This is the trick! This link sets
-            // the `background` in location state.
-            //  state: { background: location }
-          }}
-        >
- <div className={classes.pImage} ><img src={pkmn.image}></img>  </div>
-        </Link>
+  <div className={classes.pImage} ><img src={pkmn.image}></img>  </div>
+
+
 
   
 
@@ -134,6 +135,8 @@ import { Search } from '../Search/Search'
   <div className={classes.line3}></div>
 
   </div>
+</Link>
+ 
   // </a>
 ))}
 
@@ -360,8 +363,9 @@ const useStyles = createUseStyles(
     cardContent:{
       marginLeft: '2%',
       borderRadius: '17px',
-      textDecoration: 'none !important',
-      display:'inline'
+      textDecoration: 'none',
+      display:'inline',
+      color: 'rgba(255,255,255,.92)',
     }
   },
   { name: 'PokemonList' }
