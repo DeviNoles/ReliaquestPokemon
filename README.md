@@ -8,6 +8,7 @@ Additional Todo
 - [ ] pokedex modal ui
 - [ ] search ui
 - [ ] modal pop up
+ --------
 - [ ] Comment and organize code
 - [ ] title on page
 - [ ] hosting
