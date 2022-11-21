@@ -6,8 +6,9 @@ Additional Todo
 - [X] Fix broken list ui
 - [X] fix image zlevel
 - [ ] pokedex modal ui
+- [ ] search ui
+- [ ] modal pop up
 - [ ] Comment and organize code
+- [ ] title on page
 - [ ] hosting
 - [ ] update readme
-- [ ] search ui
-- [ ] title on page
