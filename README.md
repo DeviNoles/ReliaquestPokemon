@@ -1,7 +1,8 @@
 # ReliaquestPokemon
 
 Additional Todo
-- [ ] Pokemon list ui
+- [X] Pokemon list ui
 - [ ] pokedex modal ui
-- [ ] Arrow key scrolling in list
-- [ ] hover pokemon ui
+- [X] hover pokemon ui
+- [ ] Fix broken list ui
+- [ ] fix image zlevel
