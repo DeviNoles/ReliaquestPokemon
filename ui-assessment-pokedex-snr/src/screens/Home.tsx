@@ -25,6 +25,8 @@ export const Home = () => {
 const useStyles = createUseStyles(
   {
     root: {
+      marginLeft: '3%',
+
       minWidth: '100%',
       minHeight: '100%',
       padding: '24px 20%',

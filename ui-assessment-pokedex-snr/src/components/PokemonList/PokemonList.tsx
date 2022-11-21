@@ -20,7 +20,9 @@ import { Search } from '../Search/Search'
   return (
     <div className={classes.root}>
       {/* <Search Pokemons={pokemons}/> */}
-      <input type="text" placeholder='Search..' className={classes.inputBox} onChange={(e)=>{setCurrentSearch(e.target.value)} }/>
+      <input type="text" placeholder='Search..' className={classes.searchBar} onChange={(e)=>{setCurrentSearch(e.target.value)} }/>
+      
+      
 {pokemons.filter((val)=>{
   if(currentSearch=="") return val
   else if(val.name.toLowerCase().includes(currentSearch.toLowerCase())) return val
@@ -158,9 +160,6 @@ const useStyles = createUseStyles(
       color: 'rgba(255,255,255,.92)',
 
     },
-    inputBox:{
-      color: 'black'
-  },
     card:{
       alignItems: 'center',
       overflow: 'hidden',
@@ -364,6 +363,16 @@ const useStyles = createUseStyles(
       textDecoration: 'none',
       display:'inline',
       color: 'rgba(255,255,255,.92)',
+    },
+    searchBar:{
+      borderRadius:'40px',
+      // border:'2px solid #609',
+      padding: '20px',
+      width: '15%',
+      height: '15px',    
+      color: 'black',
+      marginBottom:'2%'
+
     }
   },
   { name: 'PokemonList' }

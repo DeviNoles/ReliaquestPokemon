@@ -29,6 +29,32 @@ export const GET_POKEMONS = gql`
     }
   }
 `;
+export const GET_POKEMONS_MODAL = gql`
+query pokemon($id: String, $name: String){
+  pokemon(id: $id, name: $name){
+    id
+    number
+    name
+    weight{
+      minimum
+      maximum
+    }
+    height{
+      minimum
+      maximum
+    }
+    classification
+    types
+    resistant
+    weaknesses
+    fleeRate
+    maxCP
+    maxHP
+    image
+  }
+}
+`;
+
 
 export const useGetPokemons = () => {
   const { data, ...queryRes } = useQuery(GET_POKEMONS, {
