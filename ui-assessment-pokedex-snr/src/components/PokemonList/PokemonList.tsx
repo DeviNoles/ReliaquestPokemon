@@ -208,144 +208,142 @@ const useStyles = createUseStyles(
     marginTop: '5%'
   },
   typeLabel_Poison:{
-    marginLeft: '3%',
-    marginRight: '3%',
+
+    marginRight: '6%',
     paddingLeft: '6%',
     paddingRight: '6%',
     borderRadius:'17px',
     backgroundColor: '#A33EA1'
   },
   typeLabel_Normal:{
-    marginLeft: '3%',
-    marginRight: '3%',
+  
+    marginRight: '6%',
     paddingLeft: '6%',
     paddingRight: '6%',
     borderRadius:'17px',
     backgroundColor: '#A8A77A'
   },
   typeLabel_Fighting:{
-    marginLeft: '3%',
-    marginRight: '3%',
+  
+    marginRight: '6%',
     paddingLeft: '6%',
     paddingRight: '6%',
     borderRadius:'17px',
     backgroundColor: '#C22E28'
   },
   typeLabel_Ice:{
-    marginLeft: '3%',
-    marginRight: '3%',
+  
+    marginRight: '6%',
     paddingLeft: '6%',
     paddingRight: '6%',
     borderRadius:'17px',
     backgroundColor: '#96D9D6'
   },
   typeLabel_Water:{
-    marginLeft: '3%',
-    marginRight: '3%',
+ 
+    marginRight: '6%',
     paddingLeft: '6%',
     paddingRight: '6%',
     borderRadius:'17px',
     backgroundColor: '#6390F0'
   },
   typeLabel_Fire:{
-    marginLeft: '3%',
-    marginRight: '3%',
+   
+    marginRight: '6%',
     paddingLeft: '6%',
     paddingRight: '6%',
     borderRadius:'17px',
     backgroundColor: '#EE8130'
   },
   typeLabel_Electric:{
-    marginLeft: '3%',
-    marginRight: '3%',
+
+    marginRight: '6%',
     paddingLeft: '6%',
     paddingRight: '6%',
     borderRadius:'17px',
     backgroundColor: '#F7D02C'
   },
   typeLabel_Grass:{
-    marginLeft: '3%',
-    marginRight: '3%',
+   
+    marginRight: '6%',
     paddingLeft: '6%',
     paddingRight: '6%',
     borderRadius:'17px',
     backgroundColor: '#7AC74C'
   },
   typeLabel_Ground:{
-    marginLeft: '3%',
-    marginRight: '3%',
+
+    marginRight: '6%',
     paddingLeft: '6%',
     paddingRight: '6%',
     borderRadius:'17px',
     backgroundColor: '#E2BF65'
   },
   typeLabel_Flying:{
-    marginLeft: '3%',
-    marginRight: '3%',
+ 
+    marginRight: '6%',
     paddingLeft: '6%',
     paddingRight: '6%',
     borderRadius:'17px',
     backgroundColor: '#A98FF3'
   },
   typeLabel_Psychic:{
-    marginLeft: '3%',
-    marginRight: '3%',
+   
+    marginRight: '6%',
     paddingLeft: '6%',
     paddingRight: '6%',
     borderRadius:'17px',
     backgroundColor: '#F95587'
   },
   typeLabel_Bug:{
-    marginLeft: '3%',
-    marginRight: '3%',
+  
+    marginRight: '6%',
     paddingLeft: '6%',
     paddingRight: '6%',
     borderRadius:'17px',
     backgroundColor: '#A6B91A'
   },
   typeLabel_Rock:{
-    marginLeft: '3%',
-    marginRight: '3%',
+  
+    marginRight: '6%',
     paddingLeft: '6%',
     paddingRight: '6%',
     borderRadius:'17px',
     backgroundColor: '#B6A136'
   },
   typeLabel_Ghost:{
-    marginLeft: '3%',
-    marginRight: '3%',
+  
+    marginRight: '6%',
     paddingLeft: '6%',
     paddingRight: '6%',
     borderRadius:'17px',
     backgroundColor: '#735797'
   },
   typeLabel_Dragon:{
-    marginLeft: '3%',
-    marginRight: '3%',
+  
+    marginRight: '6%',
     paddingLeft: '6%',
     paddingRight: '6%',
     borderRadius:'17px',
     backgroundColor: '#6F35FC'
   },
   typeLabel_Dark:{
-    marginLeft: '3%',
-    marginRight: '3%',
+    
+    marginRight: '6%',
     paddingLeft: '6%',
     paddingRight: '6%',
     borderRadius:'17px',
     backgroundColor: '#705746'
   },
   typeLabel_Steel:{
-    marginLeft: '3%',
-    marginRight: '3%',
+    marginRight: '6%',
     paddingLeft: '6%',
     paddingRight: '6%',
     borderRadius:'17px',
     backgroundColor: '#B7B7CE'
   },
   typeLabel_Fairy:{
-    marginLeft: '3%',
-    marginRight: '3%',
+    marginRight: '6%',
     paddingLeft: '6%',
     paddingRight: '6%',
     borderRadius:'17px',
