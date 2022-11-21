@@ -7,3 +7,4 @@ Additional Todo
 - [ ] Fix broken list ui
 - [ ] fix image zlevel
 - [ ] Comment and organize code
+- [ ] hosting
