@@ -16,11 +16,7 @@ import { ListPage, Home, Modal } from '../screens';
 
 function ModalSwitch() {
   let location = useLocation()
-  const [name, setName] = useState('')
-  function setLocation(nLocation: any){
-    location = nLocation
-      
-  }
+
   // function setName(nName: string){
   //  name = nName
   //   console.log("SET NAME")
@@ -35,7 +31,7 @@ function ModalSwitch() {
   // use it as the location for the <Switch> so
   // we show the gallery in the background, behind
   // the modal.
-  let background:any = location.state && location.state.background;
+  const background = location.state && location.state.background;
   const classes = useStyles();
   return (
     
@@ -44,17 +40,21 @@ function ModalSwitch() {
       
     <Nav />
 
-      <Routes location={background || location}>
-        <Route path="/" element={<Home />} />
-        <Route path="/pokemon" element={<ListPage setName={setName}/>} />
-        {/* <Route path="/pokemon/:id" element={<Modal />} /> */}
 
+
+<Routes location={background || location}>
+<Route path="Home" element={<Home />} />
+
+        <Route path="/pokemon" element={<ListPage/>}>
+          <Route path=":name" element={<Modal />} />
+        </Route>
       </Routes>
       {background && (
         <Routes>
-          <Route path="modal" element={<Modal />} />
+          <Route path="*" element={<Modal />} />
         </Routes>
       )}
+
       {/* Show the modal when a background page is set */}
 
     </div>

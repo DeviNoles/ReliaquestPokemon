@@ -4,10 +4,9 @@ import { PokemonList } from '../components';
 
 export const ListPage = (props: any) => {
   const classes = useStyles();
-console.log(props.blog)
   return (
     <div className={classes.root}>
-      <PokemonList blog={props.blog} />
+      <PokemonList/>
     </div>
   );
 };

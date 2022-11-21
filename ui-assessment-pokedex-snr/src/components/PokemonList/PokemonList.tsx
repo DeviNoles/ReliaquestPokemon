@@ -6,17 +6,13 @@ import { Search } from '../Search/Search'
  export const PokemonList = (props: any) => {
 
   
-  console.log(props)
 
   const classes = useStyles();
   const { pokemons, loading } = useGetPokemons();
   const [currentSearch, setCurrentSearch] = useState('');
   
   let location = useLocation()
-  // useEffect(()=>{
-  //   props.blog('test123444')
 
-  // })
   if(loading)
   {
     return <div className={classes.root}>Loading...</div>
@@ -32,7 +28,6 @@ import { Search } from '../Search/Search'
 {pokemons.filter((val)=>{
   if(currentSearch=="") return val
   else if(val.name.toLowerCase().includes(currentSearch.toLowerCase())) return val
- let blog = props.blog
 }).map((pkmn) => (
 
   <div>
