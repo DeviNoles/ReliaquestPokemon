@@ -5,6 +5,9 @@ Additional Todo
 - [X] hover pokemon ui
 - [X] Fix broken list ui
 - [X] fix image zlevel
--  [ ] pokedex modal ui
+- [ ] pokedex modal ui
 - [ ] Comment and organize code
 - [ ] hosting
+- [ ] update readme
+- [ ] search ui
+- [ ] title on page
