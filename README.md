@@ -5,8 +5,8 @@ Additional Todo
 - [X] hover pokemon ui
 - [X] Fix broken list ui
 - [X] fix image zlevel
+- [X] search ui
 - [ ] pokedex modal ui
-- [ ] search ui
 - [ ] modal pop up
  --------
 - [ ] Flexbox ui
