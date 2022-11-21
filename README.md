@@ -7,10 +7,13 @@ Additional Todo
 - [X] fix image zlevel
 - [X] search ui
 - [ ] pokedex modal ui
-- [ ] modal pop up
+- [X] modal pop up
  --------
 - [ ] Flexbox ui
 - [ ] Comment and organize code
 - [ ] title on page
 - [ ] hosting
 - [ ] update readme
+- [ ] gif
+- [ ] invite to repo
+- [ ] ???
