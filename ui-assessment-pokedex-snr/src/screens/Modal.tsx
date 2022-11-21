@@ -10,7 +10,7 @@ export const Modal = () => {
   const classes = useStyles()
   return (
     <div className={classes.modalDiv}>
-      <div className={classes.modalDiv}>
+      <div className={classes.modal}>
         <h3>Modal</h3>
         <button onClick={() => navigate(-1)}>Close</button>
       </div>
@@ -28,10 +28,12 @@ const useStyles = createUseStyles(
       padding: '32px',
       boxSizing: 'border-box',
       color: 'black',
-      backgroundColor: 'white'
+      backgroundColor: 'white',
 
     },
     modalDiv: {
+      zIndex: '9',
+
       width: '100vw',
       height: '100vh',
       position: 'absolute',
@@ -42,6 +44,7 @@ const useStyles = createUseStyles(
       alignItems: 'center',
     },
     modal: {
+      
       width: '350px',
       height: '200px',
       backgroundColor: 'white',

@@ -204,7 +204,7 @@ const useStyles = createUseStyles(
   },
 
   pImage:{
-    zIndex: '9'
+    zIndex: '7'
   },
   typeLayout:{
     display: 'flex',
