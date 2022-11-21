@@ -2,9 +2,9 @@
 
 Additional Todo
 - [X] Pokemon list ui
-- [ ] pokedex modal ui
 - [X] hover pokemon ui
-- [ ] Fix broken list ui
-- [ ] fix image zlevel
+- [X] Fix broken list ui
+- [X] fix image zlevel
+-  [ ] pokedex modal ui
 - [ ] Comment and organize code
 - [ ] hosting
