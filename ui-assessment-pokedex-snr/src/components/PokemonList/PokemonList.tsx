@@ -1,46 +1,54 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import { createUseStyles } from 'react-jss';
-import { Link,  useLocation, } from 'react-router-dom';
+import { Link,  Outlet,  useLocation, } from 'react-router-dom';
 import { useGetPokemons } from '../../hooks/useGetPokemons';
 import { Search } from '../Search/Search'
- export const PokemonList = () => {
+ export const PokemonList = (props: any) => {
+
+  
+  console.log(props)
+
   const classes = useStyles();
   const { pokemons, loading } = useGetPokemons();
   const [currentSearch, setCurrentSearch] = useState('');
   
   let location = useLocation()
+  // useEffect(()=>{
+  //   props.blog('test123444')
+
+  // })
   if(loading)
   {
     return <div className={classes.root}>Loading...</div>
   }
   else{
 
+
      console.log(location)
   return (
     <div className={classes.root}>
       {/* <Search Pokemons={pokemons}/> */}
       <input type="text" placeholder='Search..' className={classes.searchBar} onChange={(e)=>{setCurrentSearch(e.target.value)} }/>
-      
-      
 {pokemons.filter((val)=>{
   if(currentSearch=="") return val
   else if(val.name.toLowerCase().includes(currentSearch.toLowerCase())) return val
-
+ let blog = props.blog
 }).map((pkmn) => (
 
-  // <a href='https://www.google.com'>
+  <div>
+  {/* // <a href='https://www.google.com'> */}
   <Link
   key={pkmn.id}
   to={{
     pathname: `/pokemon/${pkmn.name}`,
-    // This is the trick! This link sets
-    // the `background` in location state.
-      state: { background: location }
   }}
+  state= {{ background: location }}
+
 >
 <div className={classes.card}>
   <div className={classes.line1}></div>
   <div className={classes.pImage} ><img src={pkmn.image}></img>  </div>
+
 
 
 
@@ -138,7 +146,8 @@ import { Search } from '../Search/Search'
 
   </div>
 </Link>
- 
+<Outlet/>
+ </div>
   // </a>
 ))}
 

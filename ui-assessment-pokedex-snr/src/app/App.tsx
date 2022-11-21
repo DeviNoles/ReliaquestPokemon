@@ -1,6 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
-  BrowserRouter,
   Routes,
   Route,
   Link,
@@ -16,8 +15,19 @@ import { client } from './client';
 import { ListPage, Home, Modal } from '../screens';
 
 function ModalSwitch() {
-  let location = useLocation();
-
+  let location = useLocation()
+  const [name, setName] = useState('')
+  function setLocation(nLocation: any){
+    location = nLocation
+      
+  }
+  // function setName(nName: string){
+  //  name = nName
+  //   console.log("SET NAME")
+  //   console.log(name)
+  // }
+  // const [location, setLocation] = useState('')
+  // console.log(location)
   // This piece of state is set when one of the
   // gallery links is clicked. The `background` state
   // is the location that we were at when one of
@@ -31,18 +41,25 @@ function ModalSwitch() {
     
     <div className={classes.content}>
     <div className={classes.scrollableArea}>
+      
     <Nav />
 
       <Routes location={background || location}>
         <Route path="/" element={<Home />} />
-        <Route path="/pokemon" element={<ListPage />} />
-        <Route path="/pokemon/:id" element={<Modal />} />
-      </Routes>
+        <Route path="/pokemon" element={<ListPage setName={setName}/>} />
+        {/* <Route path="/pokemon/:id" element={<Modal />} /> */}
 
+      </Routes>
+      {background && (
+        <Routes>
+          <Route path="modal" element={<Modal />} />
+        </Routes>
+      )}
       {/* Show the modal when a background page is set */}
-      {background && <Route path="/pokemon/:id" element={<Modal />} />}
 
     </div>
+    {name}
+
     </div>
   );
 }
@@ -55,9 +72,8 @@ function App() {
     <ApolloProvider client={client}>
       <LayoutProvider>
         <div className={classes.root}>
-          <BrowserRouter>
+
          <ModalSwitch/>
-          </BrowserRouter>
         </div>
       </LayoutProvider>
     </ApolloProvider>

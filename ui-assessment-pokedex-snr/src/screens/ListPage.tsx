@@ -2,12 +2,12 @@ import React from 'react';
 import { createUseStyles } from 'react-jss';
 import { PokemonList } from '../components';
 
-export const ListPage = () => {
+export const ListPage = (props: any) => {
   const classes = useStyles();
-
+console.log(props.blog)
   return (
     <div className={classes.root}>
-      <PokemonList />
+      <PokemonList blog={props.blog} />
     </div>
   );
 };
