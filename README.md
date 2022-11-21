@@ -9,6 +9,7 @@ Additional Todo
 - [ ] search ui
 - [ ] modal pop up
  --------
+- [ ] Flexbox ui
 - [ ] Comment and organize code
 - [ ] title on page
 - [ ] hosting
