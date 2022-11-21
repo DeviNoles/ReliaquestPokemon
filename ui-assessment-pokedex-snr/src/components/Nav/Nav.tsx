@@ -59,9 +59,10 @@ const useStyles = createUseStyles(
       flexDirection: 'column',
       transition: 'width .2s ease-in-out',
       overflow: 'hidden',
+      
     },
     spacer: {
-      height: '100%',
+      // height: '100%',
       width: (props: StyleProps) => (props.navCollapsed ? '81px' : '320px'),
       transition: 'width .2s ease-in-out',
     },

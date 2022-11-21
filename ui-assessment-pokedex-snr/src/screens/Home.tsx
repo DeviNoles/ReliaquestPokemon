@@ -29,6 +29,7 @@ const useStyles = createUseStyles(
       minHeight: '100%',
       padding: '24px 20%',
       boxSizing: 'border-box',
+      color: 'rgba(255,255,255,.68)',
       '& p': {
         color: 'rgba(255,255,255,.68)',
       },

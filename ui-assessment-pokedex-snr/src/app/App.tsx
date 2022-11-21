@@ -1,28 +1,62 @@
 import React from 'react';
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  Link,
+  useLocation,
+  useParams
+} from "react-router-dom";
+
 import { createUseStyles } from 'react-jss';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { LayoutProvider } from '../contexts';
 import { Nav } from '../components';
 import { ApolloProvider } from '@apollo/client';
 import { client } from './client';
 import { ListPage, Home, Modal } from '../screens';
+
+function ModalSwitch() {
+  let location = useLocation();
+
+  // This piece of state is set when one of the
+  // gallery links is clicked. The `background` state
+  // is the location that we were at when one of
+  // the gallery links was clicked. If it's there,
+  // use it as the location for the <Switch> so
+  // we show the gallery in the background, behind
+  // the modal.
+  let background:any = location.state && location.state.background;
+  const classes = useStyles();
+  return (
+    
+    <div className={classes.content}>
+    <div className={classes.scrollableArea}>
+    <Nav />
+
+      <Routes location={background || location}>
+        <Route path="/" element={<Home />} />
+        <Route path="/pokemon" element={<ListPage />} />
+        <Route path="/img/:id" element={<Modal />} />
+      </Routes>
+
+      {/* Show the modal when a background page is set */}
+      {background && <Route path="/img/:id" children={<Modal />} />}
+
+    </div>
+    </div>
+  );
+}
+
+
 function App() {
   const classes = useStyles();
+
   return (
     <ApolloProvider client={client}>
       <LayoutProvider>
         <div className={classes.root}>
           <BrowserRouter>
-            <Nav />
-            <div className={classes.content}>
-              <div className={classes.scrollableArea}>
-                <Routes>
-                  <Route path="/" element={<Home />} />
-                  <Route path="/pokemon" element={<ListPage />} />
-                  <Route path="/img/:id" element={<Modal />} />
-                </Routes>
-              </div>
-            </div>
+         <ModalSwitch/>
           </BrowserRouter>
         </div>
       </LayoutProvider>

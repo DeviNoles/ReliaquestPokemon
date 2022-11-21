@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 
 import { createUseStyles } from 'react-jss';
+import { Link } from 'react-router-dom';
 import { useGetPokemons } from '../../hooks/useGetPokemons';
 import { Search } from '../Search/Search'
  export const PokemonList = () => {
@@ -25,17 +26,30 @@ import { Search } from '../Search/Search'
   else if(val.name.toLowerCase().includes(currentSearch.toLowerCase())) return val
 
 }).map((pkmn) => (
-  <a href='https://www.google.com'>
+  // <a href='https://www.google.com'>
   <div className={classes.card}>
-    
-    <div className={classes.line1}></div>
-<div className={classes.pImage} ><img src={pkmn.image}></img>  </div>
+  <div className={classes.line1}></div>
+        <Link
+          key={pkmn.id}
+          to={{
+            pathname: `/img/${pkmn.id}`,
+            // This is the trick! This link sets
+            // the `background` in location state.
+            // state: { background: location }
+          }}
+        >
+ <div className={classes.pImage} ><img src={pkmn.image}></img>  </div>
+        </Link>
+
+  
+
   <div className={classes.cardContent}>
   <div key={pkmn.id}>
   <div >{pkmn.number}. {pkmn.name}</div>
 
   <div className={classes.typeLayout}>
       {pkmn.types.map((pType) =>
+      
       {
       if(pType=="Normal")
       {
@@ -120,7 +134,7 @@ import { Search } from '../Search/Search'
   <div className={classes.line3}></div>
 
   </div>
-  </a>
+  // </a>
 ))}
 
 
@@ -137,7 +151,8 @@ const useStyles = createUseStyles(
       textAlign: 'center',
       padding: '32px',
       boxSizing: 'border-box',
-   
+      color: 'rgba(255,255,255,.92)',
+
     },
     inputBox:{
       color: 'black'
