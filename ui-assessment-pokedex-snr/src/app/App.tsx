@@ -40,7 +40,7 @@ function ModalSwitch() {
       </Routes>
 
       {/* Show the modal when a background page is set */}
-      {background && <Route path="/img/:id" children={<Modal />} />}
+      {background && <Route path="/img/:id" element={<Modal />} />}
 
     </div>
     </div>

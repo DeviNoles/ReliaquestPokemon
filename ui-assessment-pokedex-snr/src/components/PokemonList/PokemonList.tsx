@@ -35,7 +35,7 @@ import { Search } from '../Search/Search'
             pathname: `/img/${pkmn.id}`,
             // This is the trick! This link sets
             // the `background` in location state.
-            // state: { background: location }
+            //  state: { background: location }
           }}
         >
  <div className={classes.pImage} ><img src={pkmn.image}></img>  </div>
@@ -147,7 +147,8 @@ import { Search } from '../Search/Search'
 const useStyles = createUseStyles(
   {
     root: {
-      width: '100%',
+      width: '95%',
+      marginLeft: '5%',
       textAlign: 'center',
       padding: '32px',
       boxSizing: 'border-box',
