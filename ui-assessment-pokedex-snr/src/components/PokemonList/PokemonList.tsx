@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+
 import { createUseStyles } from 'react-jss';
 import { useGetPokemons } from '../../hooks/useGetPokemons';
 import { Search } from '../Search/Search'
@@ -6,6 +7,7 @@ import { Search } from '../Search/Search'
   const classes = useStyles();
   const { pokemons, loading } = useGetPokemons();
   const [currentSearch, setCurrentSearch] = useState('');
+  
 
   if(loading)
   {
@@ -23,7 +25,9 @@ import { Search } from '../Search/Search'
   else if(val.name.toLowerCase().includes(currentSearch.toLowerCase())) return val
 
 }).map((pkmn) => (
+  <a href='https://www.google.com'>
   <div className={classes.card}>
+    
     <div className={classes.line1}></div>
 <div className={classes.pImage} ><img src={pkmn.image}></img>  </div>
   <div className={classes.cardContent}>
@@ -114,7 +118,9 @@ import { Search } from '../Search/Search'
   </div>
   <div className={classes.line2}></div>
   <div className={classes.line3}></div>
+
   </div>
+  </a>
 ))}
 
 
@@ -198,7 +204,6 @@ const useStyles = createUseStyles(
     borderRadius:'17px',
     backgroundColor: '#A8A77A'
   },
-
   typeLabel_Fighting:{
     marginLeft: '3%',
     marginRight: '3%',
@@ -339,7 +344,7 @@ const useStyles = createUseStyles(
     cardContent:{
       marginLeft: '2%',
       borderRadius: '17px',
-
+      textDecoration: 'none !important',
       display:'inline'
     }
   },

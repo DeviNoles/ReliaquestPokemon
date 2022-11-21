@@ -5,8 +5,7 @@ import { LayoutProvider } from '../contexts';
 import { Nav } from '../components';
 import { ApolloProvider } from '@apollo/client';
 import { client } from './client';
-import { ListPage, Home } from '../screens';
-
+import { ListPage, Home, Modal } from '../screens';
 function App() {
   const classes = useStyles();
   return (
@@ -20,6 +19,7 @@ function App() {
                 <Routes>
                   <Route path="/" element={<Home />} />
                   <Route path="/pokemon" element={<ListPage />} />
+                  <Route path="/img/:id" element={<Modal />} />
                 </Routes>
               </div>
             </div>
