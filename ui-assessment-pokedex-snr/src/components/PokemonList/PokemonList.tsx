@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
-
 import { createUseStyles } from 'react-jss';
-import { Link } from 'react-router-dom';
+import { Link,  useLocation, } from 'react-router-dom';
 import { useGetPokemons } from '../../hooks/useGetPokemons';
 import { Search } from '../Search/Search'
  export const PokemonList = () => {
@@ -9,14 +8,14 @@ import { Search } from '../Search/Search'
   const { pokemons, loading } = useGetPokemons();
   const [currentSearch, setCurrentSearch] = useState('');
   
-
+  let location = useLocation()
   if(loading)
   {
     return <div className={classes.root}>Loading...</div>
   }
   else{
 
-  
+     console.log(location)
   return (
     <div className={classes.root}>
       {/* <Search Pokemons={pokemons}/> */}
@@ -28,14 +27,15 @@ import { Search } from '../Search/Search'
   else if(val.name.toLowerCase().includes(currentSearch.toLowerCase())) return val
 
 }).map((pkmn) => (
+
   // <a href='https://www.google.com'>
   <Link
   key={pkmn.id}
   to={{
-    pathname: `/img/${pkmn.id}`,
+    pathname: `/pokemon/${pkmn.name}`,
     // This is the trick! This link sets
     // the `background` in location state.
-    //  state: { background: location }
+      state: { background: location }
   }}
 >
 <div className={classes.card}>

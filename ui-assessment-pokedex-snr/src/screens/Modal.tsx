@@ -18,7 +18,7 @@ import { useGetPokemonsModal } from '../hooks/useGetPokemonsModal';
   console.log(data)
   return (
     <div className={classes.root}>
-
+      test123
     </div>
   );
 };
@@ -31,7 +31,8 @@ const useStyles = createUseStyles(
       textAlign: 'center',
       padding: '32px',
       boxSizing: 'border-box',
-      color: 'rgba(255,255,255,.92)',
+      color: 'black',
+      backgroundColor: 'white'
 
     },
     card:{

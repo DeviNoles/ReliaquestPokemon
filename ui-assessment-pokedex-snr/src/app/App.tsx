@@ -36,11 +36,11 @@ function ModalSwitch() {
       <Routes location={background || location}>
         <Route path="/" element={<Home />} />
         <Route path="/pokemon" element={<ListPage />} />
-        <Route path="/img/:id" element={<Modal />} />
+        <Route path="/pokemon/:id" element={<Modal />} />
       </Routes>
 
       {/* Show the modal when a background page is set */}
-      {background && <Route path="/img/:id" element={<Modal />} />}
+      {background && <Route path="/pokemon/:id" element={<Modal />} />}
 
     </div>
     </div>
