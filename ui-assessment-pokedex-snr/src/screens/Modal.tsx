@@ -28,14 +28,18 @@ export const Modal = () => {
 
 
           </div>
-          <div className={classes.closeButton}>   <button onClick={() => navigate(-1)}>Close</button></div>
-       
+          <div className={classes.closeButton}>   <button onClick={() => navigate(-1)}>X</button></div>
+
           <div className={classes.rightSide}>
 
 
+          <div>
+          {data.pokemon.number}.    {data.pokemon.name}
+
+
+            </div>
             <div>
-              No
-              <div>{data.pokemon.number}</div>
+              
 
 
             </div>
@@ -44,13 +48,8 @@ export const Modal = () => {
 
             <div>{data.pokemon.classification}</div>
 
+            <br/>
 
-            <div>
-              Name
-              <div>{data.pokemon.name}</div>
-
-
-            </div>
 
             {/*  <div>{data.pokemon.id}</div> */}
             <div>
@@ -58,11 +57,13 @@ export const Modal = () => {
               <div>{data.pokemon.height.minimum} - {data.pokemon.height.maximum}</div>
 
             </div>
+            <br/>
             <div>
               Weight
               <div>{data.pokemon.weight.minimum} - {data.pokemon.weight.maximum}</div>
 
             </div>
+            <br/>
 
             <div>
               <div className={classes.label}>Resistant</div>
@@ -143,6 +144,8 @@ export const Modal = () => {
               })}</div>
 
             </div>
+            <br/>
+
             <div className={classes.label}>
               Weaknesses
               <div className={classes.box}>{data.pokemon.weaknesses.map((pType: string) => {
@@ -253,7 +256,7 @@ const useStyles = createUseStyles(
     // },
     modalDiv: {
       zIndex: '9',
-      
+      margin: 'auto',
       width: '100vw',
       height: '100vh',
       position: 'absolute',
@@ -262,14 +265,15 @@ const useStyles = createUseStyles(
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',
+      
     },
     modal: {
       // marginTop: '50%',
-      justifyContent: 'center',
+      justifyContent: 'space-around',
       display: 'flex',
-
-      width: '40%',
-      height: '50%',
+      
+      width: '45%',
+      height: '45%',
       backgroundColor: '#fadd8c',
       borderRadius: '5px',
       flexDirection: 'row'
@@ -292,8 +296,9 @@ const useStyles = createUseStyles(
 
 
     leftSide: {
+      position: 'relative',
       display:'inline-block',
-      top: '10%',
+      top: '3%',
       float: 'left',
       alignItems: 'center',
  
@@ -303,12 +308,12 @@ const useStyles = createUseStyles(
       position:'relative',
        top: '25%',
       // right: '25%',
-      
+      right: '10%',
       width: '25%',
-      textAlign: 'center',
+       textAlign: 'center',
+      // alignItems:'flex-start',
       alignItems: 'center',
-
-      justifyContent: 'center',
+       justifyContent: 'center',
     },
     imageBox: {
       marginLeft: '5%',
@@ -509,10 +514,15 @@ const useStyles = createUseStyles(
       marginLeft: '5%'
     },
     closeButton: {
+      display: 'inline-block',
       position: 'relative',
-      top: '-5vh',
-      right: '1vh'
-    }
+      top: '-2vh',
+      right: '-37vh',
+      borderRadius: '15px',
+      zIndex: '7'
+
+    },
+   
   },
   { name: 'Modal' }
 );
