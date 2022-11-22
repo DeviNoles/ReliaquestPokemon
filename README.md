@@ -44,10 +44,10 @@ Additional Todo
 - [X] search ui
 - [ ] pokedex modal ui
 - [X] modal pop up
-- [ ] Pokemon Description api
-- [ ] fix where modal pops up
+- [ ] ~Pokemon Description api~
+- [ ] ~fix where modal pops up~
  --------
-- [ ] Flexbox ui
+- [X] Flexbox ui
 - [ ] Comment and organize code
 - [X] title on page
 - [X] ~hosting~
