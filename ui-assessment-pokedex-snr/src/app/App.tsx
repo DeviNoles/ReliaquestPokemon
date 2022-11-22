@@ -42,7 +42,7 @@ function ModalSwitch() {
 
 {/* working v6 https://dev.to/devmdmamun/create-contextual-modal-navigation-with-react-router-v6-28k2 */}
 <Routes location={background || location}>
-<Route path="Home" element={<Home />} />
+<Route path="/" element={<Home />} />
 
         <Route path="/pokemon" element={<ListPage/>}>
           <Route path=":name" element={<Modal />} />

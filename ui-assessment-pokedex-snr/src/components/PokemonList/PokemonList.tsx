@@ -23,6 +23,7 @@ import { Search } from '../Search/Search'
      console.log(location)
   return (
     <div className={classes.root}>
+      <h2>Devin Moure - Reliaquest Pokemon Assessment</h2>
       {/* <Search Pokemons={pokemons}/> */}
       <input type="text" placeholder='Search..' className={classes.searchBar} onChange={(e)=>{setCurrentSearch(e.target.value)} }/>
 {pokemons.filter((val)=>{

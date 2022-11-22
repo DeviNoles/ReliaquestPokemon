@@ -20,7 +20,7 @@ export const Modal = () => {
       <div className={classes.modalDiv}>
         <div className={classes.modal}>
           <div className={classes.leftSide}>
-            <div>
+            <div className={classes.titleLabel}>
               <h3>Pokemon Info</h3>
             </div>
             <div className={classes.imageBox}> <img src={data.pokemon.image}></img>
@@ -28,7 +28,8 @@ export const Modal = () => {
 
 
           </div>
-          <button onClick={() => navigate(-1)}>Close</button>
+          <div className={classes.closeButton}>   <button onClick={() => navigate(-1)}>Close</button></div>
+       
           <div className={classes.rightSide}>
 
 
@@ -64,8 +65,8 @@ export const Modal = () => {
             </div>
 
             <div>
-              Resistant
-              <div>{data.pokemon.resistant.map((pType: string) => {
+              <div className={classes.label}>Resistant</div>
+              <div className={classes.box}>{data.pokemon.resistant.map((pType: string) => {
                 if (pType == "Normal") {
 
                   return <div className={classes.typeLabel_Normal}>{pType}</div>
@@ -142,9 +143,9 @@ export const Modal = () => {
               })}</div>
 
             </div>
-            <div>
+            <div className={classes.label}>
               Weaknesses
-              <div>{data.pokemon.weaknesses.map((pType: string) => {
+              <div className={classes.box}>{data.pokemon.weaknesses.map((pType: string) => {
                 if (pType == "Normal") {
 
                   return <div className={classes.typeLabel_Normal}>{pType}</div>
@@ -252,7 +253,7 @@ const useStyles = createUseStyles(
     // },
     modalDiv: {
       zIndex: '9',
-
+      
       width: '100vw',
       height: '100vh',
       position: 'absolute',
@@ -263,12 +264,15 @@ const useStyles = createUseStyles(
       alignItems: 'center',
     },
     modal: {
+      // marginTop: '50%',
+      justifyContent: 'center',
+      display: 'flex',
 
-      width: '50%',
+      width: '40%',
       height: '50%',
       backgroundColor: '#fadd8c',
       borderRadius: '5px',
-      flexDirection: 'column'
+      flexDirection: 'row'
     },
     // body {
     //   height: 100vh;
@@ -286,23 +290,29 @@ const useStyles = createUseStyles(
       paddingBlock: '3px',
     },
 
-    mdle: { // module is protected
-      background: '#222',
-      color: 'white',
-      // padding: '2rem'
-    },
-    leftSide: {
-      float: 'left',
 
+    leftSide: {
+      display:'inline-block',
+      top: '10%',
+      float: 'left',
+      alignItems: 'center',
+ 
+      justifyContent: 'center',
     },
     rightSide: {
-      position:'absolute',
-      right: '25%',
-      width: '28%',
-      textAlign: 'center'
+      position:'relative',
+       top: '25%',
+      // right: '25%',
+      
+      width: '25%',
+      textAlign: 'center',
+      alignItems: 'center',
+
+      justifyContent: 'center',
     },
     imageBox: {
-  
+      marginLeft: '5%',
+
       width: '100%',
       '& img':{
         width: '70%',
@@ -311,11 +321,11 @@ const useStyles = createUseStyles(
       }
     },
     typeLabel_Poison: {
-      width: '4%',
-      textAlign: 'center',
-
-      paddingLeft: '6%',
-      paddingRight: '6%',
+      marginBottom: '2%',
+      display: 'inline-block',
+      marginRight: '1%',
+      paddingLeft: '4%',
+      paddingRight: '4%',
       borderRadius: '17px',
       backgroundColor: '#A33EA1'
     },
@@ -323,145 +333,186 @@ const useStyles = createUseStyles(
       width: '4%',
       textAlign: 'center',
 
-      marginRight: '6%',
-      paddingLeft: '6%',
-      paddingRight: '6%',
+      marginBottom: '2%',
+      marginRight: '1%',
+      paddingLeft: '4%',
+      paddingRight: '4%',
       borderRadius: '17px',
       backgroundColor: '#A8A77A'
     },
     typeLabel_Fighting: {
-      width: '4%',
+    
       textAlign: 'center',
+      display: 'flex',
+      flexDirection: 'row',
+      marginBottom: '2%',
+      marginRight: '1%',
+      paddingLeft: '4%',
+      paddingRight: '4%',
 
-      marginRight: '6%',
-      paddingLeft: '6%',
-      paddingRight: '6%',
       borderRadius: '17px',
       backgroundColor: '#C22E28'
     },
     typeLabel_Ice: {
-      width: '4%',
-      textAlign: 'center',
-
-      marginRight: '6%',
-      paddingLeft: '6%',
-      paddingRight: '6%',
+      marginBottom: '2%',
+      display: 'inline-block',
+      marginRight: '1%',
+      paddingLeft: '4%',
+      paddingRight: '4%',
       borderRadius: '17px',
       backgroundColor: '#96D9D6'
     },
     typeLabel_Water: {
-      width: '4%',
-      textAlign: 'center',
-
-      marginRight: '6%',
-      paddingLeft: '6%',
-      paddingRight: '6%',
+      marginBottom: '2%',
+      display: 'inline-block',
+      marginRight: '1%',
+      paddingLeft: '4%',
+      paddingRight: '4%',
       borderRadius: '17px',
-      backgroundColor: '#6390F0'
+      backgroundColor: '#6390F0' 
     },
+
+
+
     typeLabel_Fire: {
-      width: '4%',
-      textAlign: 'center',
-      paddingLeft: '6%',
-      paddingRight: '6%',
+      marginBottom: '2%',
+      display: 'inline-block',
+      marginRight: '1%',
+      paddingLeft: '4%',
+      paddingRight: '4%',
       borderRadius: '17px',
       backgroundColor: '#EE8130'
+
     },
     typeLabel_Electric: {
-      width: '4%',
-
-      marginRight: '6%',
-      paddingLeft: '6%',
-      paddingRight: '6%',
+      marginBottom: '2%',
+      display: 'inline-block',
+      marginRight: '1%',
+      paddingLeft: '4%',
+      paddingRight: '4%',
       borderRadius: '17px',
       backgroundColor: '#F7D02C'
     },
     typeLabel_Grass: {
-
-      marginRight: '6%',
-      paddingLeft: '6%',
-      paddingRight: '6%',
+      marginBottom: '2%',
+      display: 'inline-block',
+      marginRight: '1%',
+      paddingLeft: '4%',
+      paddingRight: '4%',
       borderRadius: '17px',
       backgroundColor: '#7AC74C'
     },
     typeLabel_Ground: {
-
-      marginRight: '6%',
-      paddingLeft: '6%',
-      paddingRight: '6%',
+      marginBottom: '2%',
+      display: 'inline-block',
+      marginRight: '1%',
+      paddingLeft: '4%',
+      paddingRight: '4%',
       borderRadius: '17px',
       backgroundColor: '#E2BF65'
     },
     typeLabel_Flying: {
-
-      marginRight: '6%',
-      paddingLeft: '6%',
-      paddingRight: '6%',
+      marginBottom: '2%',
+      display: 'inline-block',
+      marginRight: '1%',
+      paddingLeft: '4%',
+      paddingRight: '4%',
       borderRadius: '17px',
       backgroundColor: '#A98FF3'
     },
     typeLabel_Psychic: {
-
-      marginRight: '6%',
-      paddingLeft: '6%',
-      paddingRight: '6%',
+      marginBottom: '2%',
+      display: 'inline-block',
+      marginRight: '1%',
+      paddingLeft: '4%',
+      paddingRight: '4%',
       borderRadius: '17px',
       backgroundColor: '#F95587'
     },
     typeLabel_Bug: {
-
-      marginRight: '6%',
-      paddingLeft: '6%',
-      paddingRight: '6%',
+      marginBottom: '2%',
+      display: 'inline-block',
+      marginRight: '1%',
+      paddingLeft: '4%',
+      paddingRight: '4%',
       borderRadius: '17px',
       backgroundColor: '#A6B91A'
     },
     typeLabel_Rock: {
-
-      marginRight: '6%',
-      paddingLeft: '6%',
-      paddingRight: '6%',
+      marginBottom: '2%',
+      display: 'inline-block',
+      marginRight: '1%',
+      paddingLeft: '4%',
+      paddingRight: '4%',
       borderRadius: '17px',
       backgroundColor: '#B6A136'
     },
     typeLabel_Ghost: {
-
-      marginRight: '6%',
-      paddingLeft: '6%',
-      paddingRight: '6%',
+      marginBottom: '2%',
+      display: 'inline-block',
+      marginRight: '1%',
+      paddingLeft: '4%',
+      paddingRight: '4%',
       borderRadius: '17px',
       backgroundColor: '#735797'
     },
     typeLabel_Dragon: {
-
-      marginRight: '6%',
-      paddingLeft: '6%',
-      paddingRight: '6%',
+      marginBottom: '2%',
+      display: 'inline-block',
+      marginRight: '1%',
+      paddingLeft: '4%',
+      paddingRight: '4%',
       borderRadius: '17px',
       backgroundColor: '#6F35FC'
     },
     typeLabel_Dark: {
-
-      marginRight: '6%',
-      paddingLeft: '6%',
-      paddingRight: '6%',
+      marginBottom: '2%',
+      display: 'inline-block',
+      marginRight: '1%',
+      paddingLeft: '4%',
+      paddingRight: '4%',
       borderRadius: '17px',
       backgroundColor: '#705746'
     },
     typeLabel_Steel: {
-      marginRight: '6%',
-      paddingLeft: '6%',
-      paddingRight: '6%',
+      marginBottom: '2%',
+      display: 'inline-block',
+      marginRight: '1%',
+      paddingLeft: '4%',
+      paddingRight: '4%',
       borderRadius: '17px',
       backgroundColor: '#B7B7CE'
     },
     typeLabel_Fairy: {
-      marginRight: '6%',
-      paddingLeft: '6%',
-      paddingRight: '6%',
+      marginBottom: '2%',
+      display: 'inline-block',
+      marginRight: '1%',
+      paddingLeft: '4%',
+      paddingRight: '4%',
       borderRadius: '17px',
       backgroundColor: '#D685AD'
+      
     },
+    box:{
+      display: 'flex',
+      flexWrap: 'wrap',
+      alignItems: 'center',
+      textAlign: 'center',
+      justifyContent: 'center',
+    },
+    label:{
+      justifyContent: 'center',
+      textAlign: 'center',
+      marginBottom: '2%'
+    },
+    titleLabel: {
+      marginLeft: '5%'
+    },
+    closeButton: {
+      position: 'relative',
+      top: '-5vh',
+      right: '1vh'
+    }
   },
   { name: 'Modal' }
 );
