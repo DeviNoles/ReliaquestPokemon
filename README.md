@@ -9,6 +9,7 @@ Additional Todo
 - [ ] pokedex modal ui
 - [X] modal pop up
 - [ ] Pokemon Description api
+- [ ] fix where modal pops up
  --------
 - [ ] Flexbox ui
 - [ ] Comment and organize code
