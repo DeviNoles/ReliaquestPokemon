@@ -8,6 +8,7 @@ Additional Todo
 - [X] search ui
 - [ ] pokedex modal ui
 - [X] modal pop up
+- [ ] Pokemon Description api
  --------
 - [ ] Flexbox ui
 - [ ] Comment and organize code
