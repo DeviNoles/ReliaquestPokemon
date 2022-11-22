@@ -46,10 +46,11 @@ query pokemon($id: String, $name: String){
 
 
 
-export const useGetPokemonsModal = () => {
+export const useGetPokemonsModal = (pokemon: string) => {
+  console.log("PASSED POKEMON NAME: ", pokemon)
   const { data, ...queryRes } = useQuery(GET_POKEMONS_MODAL, {
     variables:{
-    name: "Charizard"
+    name: pokemon
   }
   });
 
