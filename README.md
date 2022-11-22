@@ -28,12 +28,18 @@
 
 ## Issues & Solutions
 * Issue 1  
+
 When creating the router modal, pretty much every tutorial I found only showed how to do it on React Router V5. The code matched all the tutorials, even on the offical [React Router website](https://v5.reactrouter.com/web/example/modal-gallery). I asked in the Reactiflux Discord, someone told me that the error I showed them made it seem like I had a package out of date.
-<br>
+
 Turns out there were many changes in React Router V6 in relation to V5. One of these things that changed being that 'state' is a prop in <Link/>. I created my own modal that is routed from the Pokemon List component and needed a way to set the background of the page to the one we are currently at so the modal appears over it. After searching for a bit, [I found an article on StackOverflow of someone with the exact same issue](https://stackoverflow.com/questions/71375943/ts-error-object-literal-may-only-specify-known-properties-and-state-does-not).  
 <br>
+
+
 * Issue 2
-Designing the features responsively, to fit on smaller screen sizes such as cell phones, was a bit challenging and something I will continue to learn. Some of the components like the modal text get funky on small screens. I had originally done float: left and float: right to seperate the image from the context. Then after attempting to center the type text in their respective labels, nothing would happen and the text would stay where it was. I learned that this is because [the text isn't centered because the elements are floated, and floated elements "shrink" to the content, even if it's a block level element](https://stackoverflow.com/questions/10408072/text-aligncenter-doesnt-work).
+
+Designing the features responsively, to fit on smaller screen sizes such as cell phones, was a bit challenging at first but I was able to learn a lot. I had originally done float: left and float: right to seperate the image from the context. Then after attempting to center the type text in their respective labels, nothing would happen and the text would stay where it was. I learned that this is because [the text isn't centered because the elements are floated, and floated elements "shrink" to the content, even if it's a block level element](https://stackoverflow.com/questions/10408072/text-aligncenter-doesnt-work).
+
+I implemented Flexbox to design my layout.
 
 
 Additional Todo
@@ -42,7 +48,7 @@ Additional Todo
 - [X] Fix broken list ui
 - [X] fix image zlevel
 - [X] search ui
-- [ ] pokedex modal ui
+- [X] pokedex modal ui
 - [X] modal pop up
 - [ ] ~Pokemon Description api~
 - [ ] ~fix where modal pops up~
