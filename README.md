@@ -45,7 +45,7 @@ Additional Todo
 - [ ] Flexbox ui
 - [ ] Comment and organize code
 - [X] title on page
-- [ ] hosting
+- [X] ~hosting~
 - [ ] update readme
 - [ ] gif
 - [ ] invite to repo
