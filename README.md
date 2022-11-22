@@ -26,10 +26,11 @@
 
 
 
+## Issues & Solutions
+* Issue 1
+When creating the router modal, pretty much every tutorial I found only showed how to do it on React Router V5. The code matched all the tutorials, even on the offical [React Router website](https://v5.reactrouter.com/web/example/modal-gallery). I asked in the Reactiflux Discord, someone told me that the error I showed them made it seem like I had a package out of date.
 
-
-
-
+Turns out there were many changes in React Router V6 in relation to V5. One of these things that changed being that 'state' is a prop in <Link/>. After searching for a bit, [I found an article on StackOverflow of someone with the exact same issue](https://stackoverflow.com/questions/71375943/ts-error-object-literal-may-only-specify-known-properties-and-state-does-not).
 
 Additional Todo
 - [X] Pokemon list ui
